@@ -1,0 +1,44 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blockchain Arcade</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./web3.min.js"></script>
+    <style>
+    body {background-color: gray; margin: 300px;}
+    h1 {
+      color: white;
+      font-family: "Verdana", sans-serif;
+    }
+    h2 {
+      color: white;
+      font-family: "Verdana", sans-serif;
+    }
+    p {
+      color: white;
+      font-family: "Courier New", monospace;
+      font-size: 22px;
+    }
+    button{
+      border-style: none;
+    }
+    </style>
+  </head>
+  <body>
+    <h1 class="display-4">Blockchain Arcade</h1>
+    <h2 class="lead">How to play:</h2>
+    <p>Install Metamask browser extension to play competetive mode.
+    <br>Use practice mode to warm up.
+    <br>If you completed a run in competetive mode, your rank (if high enaugh) will show up in the leaderboard.
+    <br>One run costs 0.001 Ether (+gas fee's).
+    <br>Careful: If you insert your money and reload the website your try is gone.
+    <br>Once the timer runs out, Metamask will get your score and add it to the blockchain, you need to accept this request too.</p>
+    <nav>
+      <a href="training.html"><button>Practice</button></a>
+      <a href="comp.html"><button>Competetive</button></a>
+      <a href="ranking.html"><button>Leaderboard</button></a>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blockchain Arcade</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./web3.min.js"></script>
+    <script type="text/javascript" src="./abi.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+    <style>
+    body {background-color: gray; margin: 300px;}
+    h1 {
+      color: white;
+      font-family: "Verdana", sans-serif;
+    }
+    h2 {
+      color: white;
+      font-family: "Verdana", sans-serif;
+    }
+    p {
+      color: white;
+      font-family: "Courier New", monospace;
+      font-size: 22px;
+    }
+    button{
+      border-style: none;
+    }
+    li{
+      font-size: 25px;
+      color: white;
+      list-style: none;
+    }
+    span{
+      font-size: 18px;
+      color: yellow;
+    }
+    </style>
+  </head>
+  <body>
+    <h1 class="display-4">Ranking</h1>
+    <ul>
+      <li>Number 1: <br><span id="no1score"></span> <br> <span id="no1address"></span></li>
+      <li>Number 2: <br><span id="no2score"></span> <br> <span id="no2address"></span></li>
+      <li>Number 3: <br><span id="no3score"></span> <br> <span id="no3address"></span></li>
+      <li>Number 4: <br><span id="no4score"></span> <br> <span id="no4address"></span></li>
+      <li>Number 5: <br><span id="no5score"></span> <br> <span id="no5address"></span></li>
+    </ul>
+    <button id="update">Update Score</button>
+    <a href="index.html">back</a>
+  </body>
+</html>

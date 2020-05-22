@@ -1,0 +1,128 @@
+<html>
+
+<head>
+  <title>Blockchain Arcade</title>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser.min.js"></script>
+  <style>
+  body {background-color: gray;}
+  .lol {
+    font-size: 20px;
+  }
+  </style>
+</head>
+
+
+
+
+
+<body>
+
+  <h1></h1>
+
+  <script>
+
+      var tile;
+
+      var score = 0;
+      var scoreText;
+
+      var secondsLeft = 60;
+      var timeLeftText;
+      var timeLeftTimer;
+
+      var gameStart = false;
+      var gameOver = false;
+      var coinsSent = false;
+
+
+      var config = {
+          type: Phaser.WEBGL,
+          width:1000,
+          height:800,
+          pixelArt: true,
+
+          scene:{
+            preload: gamePreload,
+            create: gameCreate,
+            update: gameUpdate
+          }
+
+      };
+
+      var game = new Phaser.Game(config);
+
+
+      function gamePreload(){
+        this.load.image("target","assets/target.png");
+        this.load.image("bg", "assets/bg.png");
+      }
+
+
+
+
+      function gameCreate(){
+
+        this.input.setDefaultCursor("crosshair");
+
+        tile = this.add.sprite(500,400,"target").setScale(0.5).setInteractive();
+
+        bg = this.add.sprite(300,-300,"bg");
+
+        tile.on("pointerdown", function schuss(){
+
+          tile.x = Phaser.Math.Between(37,963);
+          tile.y = Phaser.Math.Between(150,763);
+
+          score += 1;
+          scoreText.setText("Tiles hit: " + score);
+          gameStart = true;
+        });
+
+        timeLeftTimer = this.time.addEvent({ delay: 1000,
+                                callback: updateTimeLeft,
+                                callbackScope: this,
+                                repeat: -1});
+
+        scoreText = this.add.text(16, 16, 'Tiles hit: 0', { fontSize: '32px', fill: '#999' });
+        timeLeftText = this.add.text(16, 66, secondsLeft + " seconds left", { fontSize: '22px', fill: '#999' });
+
+
+      }
+
+
+
+
+
+
+      function updateTimeLeft(){
+
+          if(gameOver) return;
+
+          if(gameStart){
+            secondsLeft -= 1;
+            timeLeftText.setText(secondsLeft + " seconds left");
+        }
+
+          if(secondsLeft<0){
+            gameOver = true;
+        }
+
+      }
+
+
+
+
+      function gameUpdate(){
+
+        if(gameOver){
+          target.destroy(true);
+        }
+
+      }
+
+
+  </script>
+<div class="lol"> <a href="index.html">back</a> </div>
+</body>
+
+</html>
